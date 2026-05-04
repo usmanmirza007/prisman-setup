@@ -1,11 +1,17 @@
 import express, { Request, Response } from 'express';
-import { PrismaClient } from '@prisma/client';
+// import { PrismaClient } from './node_modules/.prisma/client';
+// import { PrismaMariaDb } from '@prisma/adapter-mariadb';
 import dotenv from 'dotenv';
+import { prisma } from './prisma/prisma';
 
 dotenv.config();
 
 const app = express();
-const prisma = new PrismaClient();
+
+// Create the Prisma Client with the adapter
+// const adapter = new PrismaMariaDb(process.env.DATABASE_URL!);
+// const prisma = new PrismaClient({ adapter });
+
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
