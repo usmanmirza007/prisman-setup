@@ -1,0 +1,10 @@
+generator client {
+  provider = "prisma-client-js"
+  // output   = "../generated/prisma"
+  // previewFeatures = ["prismaSchemaFolder"] // Uncomment if using Prisma < 6.0
+}
+
+datasource db {
+  provider = "mysql"
+  // url      = env("DATABASE_URL")
+}
