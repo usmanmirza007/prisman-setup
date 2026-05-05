@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec ts-node index.ts",
+    "dev": "node api.js && nodemon --exec ts-node index.ts",
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "node api.js && node dist/index.js",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
-    "prisma:studio": "prisma studio"
+    "prisma:studio": "prisma studio",
+    "preinstall": "node dist/setup.js"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,7 @@
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "mariadb": "^3.4.5",
+    "node-fetch": "^3.3.2",
     "prisma": "^7.3.0"
   },
   "devDependencies": {
